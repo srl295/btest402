@@ -9,12 +9,18 @@
 
 var i = Intl;
 console.log("+ Congrats, you have the Intl object.");
-var locs = [ "en", "mt", "ja" ];
+var locs = [ "en", "mt", "ja","tlh"];
 var d = new Date();
 for ( var n=0; n<locs.length; n++ ) {
     var loc = locs[n];
     console.log(loc+":");
-    console.log(" date:" + d.toLocaleString(loc,{month: "long",day:"numeric",weekday:"long",year:"numeric"}));
+    var sl=null;
+    try {
+        sl = Intl.DateTimeFormat.supportedLocalesOf([loc]);
+    }catch (e) {
+        console.log("SLO err: " + e);
+    }
+    console.log(" date: (supported:"+sl+") " + d.toLocaleString(loc,{month: "long",day:"numeric",weekday:"long",year:"numeric"}));
     try {
         console.log(" brk:" + 
                     Intl.v8BreakIterator.supportedLocalesOf(loc) + " first " + 
