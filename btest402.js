@@ -7,6 +7,13 @@
 //
 // Usage: node btest402.js
 
+try {
+    console.log("You have console.log.");
+} catch(e) {
+    console = { log: print };
+    console.log("Now you have console.log.");
+}
+
 var i = Intl;
 console.log("+ Congrats, you have the Intl object.");
 var locs = [ "en", "mt", "ja","tlh"];
