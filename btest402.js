@@ -108,9 +108,9 @@ if( summary.haveIntl ) {
             stxt += "Date:bad 'ja', ";
             console.log("* the Japanese date format text looks bad to me. Doesn't even have the year.");
         } else {
-            if( summary.ja.dstr.indexOf("金") == -1) {
+            if( summary.ja.dstr.indexOf("日") == -1) {
                 stxt += "Date:bad 'ja', ";
-                console.log("* The Japanese date format text looks bad to me. Doesn't have the right day of week.");
+                console.log("* The Japanese date format text looks bad to me.");
             }
         }
     }
