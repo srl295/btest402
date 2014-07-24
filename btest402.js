@@ -114,6 +114,10 @@ if( summary.haveIntl ) {
             }
         }
     }
+    if ( summary.en.brkOk ) {
+        stxt += "FYI: v8Brk:have 'en', ";
+        console.log("* You have Intl.v8BreakIterator support. (Note: not part of ES402.)");
+    }
 } else {
     console.log("* You don't have the 'Intl' object. You aren't EcmaScript 402 compliant.");
     stxt += " NO Intl. ";
