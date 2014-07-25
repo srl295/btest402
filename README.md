@@ -4,10 +4,12 @@ This is a very, very, very basic test of es402
 ### What is this?
 
 This tests basic sanity in an
-[ES402](http://www.ecma-international.org/ecma-402/1.0/) intl
+[ECMA-402](http://www.ecma-international.org/ecma-402/1.0/) intl
 implementation.
 
-It can work with [node](http://nodejs.org) or [d8](http://code.google.com/p/v8/).
+For a *complete test*, see [test262](http://test262.ecmascript.org/)
+([and on GitHub](https://github.com/tc39/test262)) which is maintained
+by Ecma TC39.
 
 ### Why does this exist?
 
@@ -17,7 +19,17 @@ and is under the same license.
 
 ### How do I use it?
 
-    node btest402.js
+With [node.js](http://nodejs.org):
+
+* `node btest402.js`
+
+With [d8](http://code.google.com/p/v8/):
+
+* `d8 btest402.js`
+
+With *your browser*:
+
+* copy and paste the `btest402.js` file into your browser's console?
 
 ### What do the results mean?
 

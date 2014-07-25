@@ -5,6 +5,11 @@
 //
 // This is a very, very, very basic test of es402
 //
+// URL: https://github.com/srl295/btest402
+// Author: Steven R. Loomis <srl@icu-project.org>
+//
+// for a complete test, see http://test262.ecmascript.org
+//
 // Usage: node btest402.js
 
 try {
@@ -49,8 +54,8 @@ for ( var n=0; n<locs.length; n++ ) {
         console.log(" Date Format err: " + e);
     }
     try {
-        console.log(" Intl.v8BreakIterator:" + 
-                    Intl.v8BreakIterator.supportedLocalesOf(loc) + " Supported, first()==" + 
+        console.log(" Intl.v8BreakIterator:" +
+                    Intl.v8BreakIterator.supportedLocalesOf(loc) + " Supported, first()==" +
                     new Intl.v8BreakIterator(loc).first() );
         lsummary.brkOk = true;
     } catch ( e) {
@@ -127,4 +132,3 @@ if( summary.haveIntl ) {
 console.log();
 console.log("----------------");
 console.log( "SUMMARY:" +  stxt );
-
