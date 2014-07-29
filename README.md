@@ -30,6 +30,19 @@ With [d8](http://code.google.com/p/v8/):
 With *your browser*:
 
 * copy and paste the `btest402.js` file into your browser's console?
+  that kind of works.
+
+or
+
+* view [inbrowser.html](inbrowser.html) and bring up your console
+
+With the [ECMA-402 shim)(https://github.com/ibm-js/ecma402):
+
+* first, go get and install [bower](http://bower.io/)
+* then, run `bower install ecma402` (or similar, see the
+  [ECMA-402 shim)(https://github.com/ibm-js/ecma402) repo)
+* now, bring up [viabower.html](viabower.html) and bring up your
+  console.
 
 ### What do the results mean?
 
