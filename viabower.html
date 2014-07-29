@@ -1,20 +1,55 @@
 <html>
   <head>
+    <meta charset='utf-8'><!-- are there any others? -->
     <title>
       Run btest402.js in a browser
     </title>
+    <!-- delay the test start -->
     <script>var btest402_noautorun=true;</script>
+    <!-- load the test itself -->
     <script src="btest402.js"></script>
+
+    <!-- mandatory -->
     <script src="bower_components/requirejs/require.js"></script>
 
+    <!-- From ecma402's README.md (yes, I read it!) - 3 ways of winning.
+     Uncomment one of OPTION 1  OPTION 2 or OPTION 3 ( not including
+     the line that says "OPTION"..)
+    -->
+
+<!-- ================================================================== -->
+<!--  OPTION 1 - default behavior -->
+<!--
+    <script>
+      // configuring RequireJS
+      require.config({
+      // where to find ecma402 package
+      baseUrl: "bower_components",
+      // which locales do I want to be available in addition to default browser locale
+      config: {
+      "ecma402/locales": /^(en|de|fr)$/
+      }
+      });
+    </script>
+    <script>
+      require(["ecma402/IntlShim"], function(Intl) {
+      runbtest();
+      });
+    </script>
+-->
+
+<!-- ================================================================== -->
+<!-- OPTION 2 force intl-api=false to use the shim instead of browser support.-->
 <script>
    // configuring RequireJS
    require.config({
      // where to find ecma402 package
      baseUrl: "bower_components",
-     // which locales do I want to be available in addition to default browser locale
      config: {
-        "ecma402/locales": /^(en|de|fr)$/
+       "requirejs-dplugins/has": {
+       	  "intl-api": false
+       },
+       "ecma402/locales": /^(en|ja|mt)$/
      }
    });
 </script>
@@ -24,7 +59,29 @@
   });
 </script>
 
-    <meta charset='utf-8'><!-- are there any others? -->
+
+<!-- ================================================================== -->
+<!-- OPTION 3 - load directly without the shim -->
+<!--
+<script>
+   // configuring RequireJS
+   require.config({
+     // where to find ecma402 package
+     baseUrl: "bower_components",
+     // which locales do I want to be available in addition to default browser locale
+     config: {
+        "ecma402/locales": /^(en|mt|ja)$/
+     }
+   });
+  require(["ecma402/Intl"], function(Intl) {
+   runbtest();
+  });
+</script>
+-->
+
+<!-- ================================================================== -->
+
+
   </head>
   <body>
     <h1 style='margin-top: 200px'>btest402.js - Basic ECMA-402
