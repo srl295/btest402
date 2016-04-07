@@ -55,6 +55,7 @@ function runbtest() {
             } catch (e) {
                 console.log(" Date Format err: " + e);
             }
+/*
             try {
                 console.log(" Intl.v8BreakIterator:" +
                             Intl.v8BreakIterator.supportedLocalesOf(loc) + " Supported, first()==" +
@@ -63,6 +64,7 @@ function runbtest() {
             } catch ( e) {
                 console.log(" Intl.v8BreakIterator error (NOT part of EcmaScript402): " + e);
             }
+*/
             console.log();
         }
     }
