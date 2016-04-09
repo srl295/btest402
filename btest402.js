@@ -56,6 +56,7 @@ function runbtest() {
                 console.log(" Date Format err: " + e);
             }
             try {
+                new Intl.v8BreakIterator();
                 console.log(" Intl.v8BreakIterator:" +
                             Intl.v8BreakIterator.supportedLocalesOf(loc) + " Supported, first()==" +
                             new Intl.v8BreakIterator(loc).first() );
